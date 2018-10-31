@@ -1,4 +1,4 @@
-package com.ulrica.dedignpattern.creational.singlefactory;
+package com.ulrica.designpattern.creational.singlefactory;
 
 public class Apple extends Food {
 
