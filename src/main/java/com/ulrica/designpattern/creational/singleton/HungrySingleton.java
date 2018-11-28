@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * 饿汉模式
  */
-public class HungrySingleton implements Serializable {
+public class HungrySingleton implements Serializable, Cloneable {
 
     private HungrySingleton(){}
 
@@ -22,5 +22,15 @@ public class HungrySingleton implements Serializable {
     //增加readResolve方法防止此单例在进行序列化和反序列化（readObject）时产生新的实例   序列化破坏单例模式解决方案
     private HungrySingleton readResolve() {
         return hungrySingleton;
+    }
+
+    //另一种破坏单例的途径为 clone 防止clone破坏有2中方法
+    //1.不要实现cloneable接口
+    //2.在clone实现方法内return getInstance()
+
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return getHungrySingleton();
     }
 }
