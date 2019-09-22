@@ -1,4 +1,4 @@
-package com.ulrica.designpattern.creational.singleton;
+package com.ulrica.designpattern.creational.singleton.lazy;
 
 /**
  * 懒汉模式

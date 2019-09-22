@@ -1,4 +1,4 @@
-package com.ulrica.designpattern.creational.singleton;
+package com.ulrica.designpattern.creational.singleton.hungry;
 
 import java.io.Serializable;
 
@@ -28,9 +28,8 @@ public class HungrySingleton implements Serializable, Cloneable {
     //1.不要实现cloneable接口
     //2.在clone实现方法内return getInstance()
 
-
     @Override
-    protected Object clone() throws CloneNotSupportedException {
+    public Object clone() throws CloneNotSupportedException {
         return getHungrySingleton();
     }
 }

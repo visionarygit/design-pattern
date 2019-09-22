@@ -1,9 +1,12 @@
-package com.ulrica.designpattern.creational.singleton;
+package com.ulrica.designpattern.creational.singleton.lazy;
 
 /**
  * 基于静态内部类的单例创建 （class对象的初始化锁）
  */
 public class StaticInnerClassSingleton {
+
+    private StaticInnerClassSingleton()  {
+    }
 
     private static class InnerClass {
         private static StaticInnerClassSingleton staticInnerClassSingleton = new StaticInnerClassSingleton();

@@ -1,4 +1,4 @@
-package com.ulrica.designpattern.creational.singleton;
+package com.ulrica.designpattern.creational.singleton.lazy;
 
 /**
  * 双重锁懒汉模式
