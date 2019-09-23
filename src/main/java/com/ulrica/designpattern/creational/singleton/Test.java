@@ -2,6 +2,7 @@ package com.ulrica.designpattern.creational.singleton;
 
 import com.ulrica.designpattern.creational.singleton.hungry.HungrySingleton;
 import com.ulrica.designpattern.creational.singleton.lazy.StaticInnerClassSingleton;
+import com.ulrica.designpattern.creational.singleton.register.ContainerSingleton;
 import com.ulrica.designpattern.creational.singleton.register.EnumSingleton;
 
 import java.io.*;
@@ -53,12 +54,20 @@ public class Test {
 //        System.out.println(newHungrySingleton == hungrySingleton);
 
         //克隆破坏单例
-        HungrySingleton hungrySingleton = HungrySingleton.getHungrySingleton();
-        HungrySingleton hungrySingleton1 = (HungrySingleton) hungrySingleton.clone();
+//        HungrySingleton hungrySingleton = HungrySingleton.getHungrySingleton();
+//        HungrySingleton hungrySingleton1 = (HungrySingleton) hungrySingleton.clone();
+//
+//        System.out.println(hungrySingleton);
+//        System.out.println(hungrySingleton1);
+//        System.out.println(hungrySingleton1 == hungrySingleton);
 
-        System.out.println(hungrySingleton);
-        System.out.println(hungrySingleton1);
-        System.out.println(hungrySingleton1 == hungrySingleton);
+        //基于容器实现单例
+        ContainerSingleton.putInstance("object", new Object());
+        Object o = ContainerSingleton.getInstance("object");
+        Object o1 = ContainerSingleton.getInstance("object");
+        System.out.println(o);
+        System.out.println(o1);
+        System.out.println(o1 == o);
 
     }
 }
